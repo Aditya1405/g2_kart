@@ -1,0 +1,34 @@
+<app-kart-dash-nav></app-kart-dash-nav>
+<!-- main image & intro text -->
+<section id="intro">
+    <div class="container-lg">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-5 text-center text-md-start">
+                <h1>
+                    <div class="display-2">Black-Belt</div>
+                    <!-- light grey text for the below = text-muted -->
+                    <div class="display-5 text-muted">Your Coding Skills</div>
+                </h1>
+                <p class="lead my-4 text-muted">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <a href="#pricing" class="btn btn-secondary btn-large">Buy Now</a>
+                <!-- open sidebar / offcanvas -->
+                <a href="#sidebar" class="d-block mt-3" data-bs-toggle="offcanvas" role="button"
+                    aria-controls="sidebar">
+                    Explore my other books
+                </a>
+            </div>
+            <!-- d-none means do not display for small screes d-block whean reach to mid screen then d-md-block-->
+            <div class="col-md-5 text-center d-none d-md-block">
+                <span class="tt" data-bs-placement="bottom" title="Net Ninja Pro book cover">
+                    <!-- img-fluid = This will make it 100% width of the parent element -->
+                    <img class="img-fluid" src="/assets/ebook-cover.png" alt="ebook-cover" />
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<button class="btn btn-danger" routerLink="/login">logout</button>
