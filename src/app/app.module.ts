@@ -10,6 +10,10 @@ import { KartDashboardComponent } from './kart-dashboard/kart-dashboard.componen
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { KartDashNavComponent } from './kart-dash-nav/kart-dash-nav.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { HotToastModule } from '@ngneat/hot-toast';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,10 @@ import { KartDashNavComponent } from './kart-dash-nav/kart-dash-nav.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    HotToastModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

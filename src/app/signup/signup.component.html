@@ -11,7 +11,7 @@
         <div class="row justify-content-center my-5">
             <!-- extra small to large full widht and after that 6 col width -->
             <div class="col-lg-6">
-                <form [formGroup]="signupForm" (ngSubmit)="signUp()">
+                <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
                     <label for="email" class="form-label">Email address:</label>
                     <div class="input-group mb-4">
                         <!-- extra mail icon you see on the group -->
@@ -27,6 +27,8 @@
                         </span>
                     </div>
 
+                    <!-- name -->
+
                     <label for="name" class="form-label">Name:</label>
                     <div class="mb-4 input-group">
                         <span class="input-group-text">
@@ -34,7 +36,6 @@
                         </span>
                         <input formControlName="name" type="text" id="name" class="form-control"
                             placeholder="e.g. Aditya" />
-                        <!-- tooltip -->
                         <span class="input-group-text">
                             <span class="tt" data-bs-placement="bottom" title="Pretty self explanatory really...">
                                 <i class="bi bi-question-circle text-muted"></i>
@@ -42,20 +43,24 @@
                         </span>
                     </div>
 
-                    <label for="contact" class="form-label">Contact:</label>
+                    <!-- contact -->
+
+                    <!-- <label for="contact" class="form-label">Contact:</label>
                     <div class="mb-4 input-group">
                         <span class="input-group-text">
                             <i class="bi bi-phone-fill text-secondary"></i>
                         </span>
                         <input formControlName="contact" type="number" id="contact" class="form-control"
                             placeholder="e.g. 1234567890" />
-                        <!-- tooltip -->
+                        
                         <span class="input-group-text">
                             <span class="tt" data-bs-placement="bottom" title="Please share your contact.">
                                 <i class="bi bi-question-circle text-muted"></i>
                             </span>
                         </span>
-                    </div>
+                    </div> -->
+
+
 
                     <label for="name" class="form-label">Password:</label>
                     <div class="mb-4 input-group">
@@ -64,7 +69,7 @@
                         </span>
                         <input formControlName="password" type="password" id="password" class="form-control"
                             placeholder="abc123" />
-                        <!-- tooltip -->
+
                         <span class="input-group-text">
                             <span class="tt" data-bs-placement="bottom" title="Please share your contact.">
                                 <i class="bi bi-question-circle text-muted"></i>
@@ -98,11 +103,14 @@
                         </select>
                     </div> -->
 
-                    <div class="mb-4 mt-5 form-floating">
+                    <!-- address -->
+
+                    <!-- <div class="mb-4 mt-5 form-floating">
                         <textarea formControlName="address" class="form-control" id="query" style="height: 140px"
                             placeholder="query"></textarea>
                         <label for="query">Your Address...</label>
-                    </div>
+                    </div> -->
+
                     <div class="mb-4 text-center">
                         <button type="submit" class="btn btn-secondary">Submit</button>
                     </div>

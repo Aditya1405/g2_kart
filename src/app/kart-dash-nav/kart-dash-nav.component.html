@@ -1,5 +1,6 @@
 <!-- navbar -->
 <!-- navbar light changes the links color to light grey -->
+
 <nav class="navbar navbar-expand-md navbar-light pt-5 pb-4">
     <div class="container-xxl">
         <!-- navbar brand / title -->
@@ -14,6 +15,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
+
         <!-- navbar links -->
         <div class="collapse navbar-collapse justify-content-end align-center " id="main-nav">
             <!-- navbar-nav is for styling  -->
@@ -22,18 +24,29 @@
                     <a class="nav-link" href="#topics">About The Book</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="#topics">
+                        <span><i class="bi bi-cart-fill"></i></span> Cart</a>
+                </li>
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="#reviews">Reviews</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">Get in Touch</a>
-                </li>
+                </li> -->
                 <!-- for small screen show pricing as alink but not on large screen-->
-                <li class="nav-item d-md-none">
+                <!-- <li class="nav-item d-md-none">
                     <a class="nav-link" href="#pricing">Pricing</a>
-                </li>
+                </li> -->
                 <!-- for large screen show pricing as a button but not on small screen  -->
                 <li class="nav-item ms-2 d-none d-md-inline">
-                    <a class="btn btn-secondary" href="#pricing">buy now</a>
+                    <a class="btn btn-secondary" href="#pricing"><span><i class="bi bi-person-circle"></i></span>
+                        <ng-container *ngIf="user$ | async as user">
+                            {{user.displayName}}
+                        </ng-container>
+                    </a>
+                </li>
+                <li class="nav-item ms-2 d-none d-md-inline">
+                    <button class="btn btn-danger" (click)="logout()">logout</button>
                 </li>
             </ul>
         </div>
