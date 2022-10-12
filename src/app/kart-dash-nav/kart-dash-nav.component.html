@@ -39,7 +39,7 @@
                 </li> -->
                 <!-- for large screen show pricing as a button but not on small screen  -->
                 <li class="nav-item ms-2 d-none d-md-inline">
-                    <a class="btn btn-secondary" href="#pricing"><span><i class="bi bi-person-circle"></i></span>
+                    <a routerLink="/profile" class="btn btn-secondary"><span><i class="bi bi-person-circle"></i></span>
                         <ng-container *ngIf="user$ | async as user">
                             {{user.displayName}}
                         </ng-container>

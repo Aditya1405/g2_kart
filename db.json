@@ -4,6 +4,33 @@
       "id": 1,
       "title": "json-server",
       "author": "typicode"
+    },
+    {
+      "id": 3,
+      "name": "isha",
+      "email": "isha@gmail.com",
+      "contact": 123,
+      "address": "bengaluru, karanatakas",
+      "cart": [
+        "a",
+        "b",
+        "c"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "alankriti",
+      "email": "alankriti@gmail.com",
+      "contact": 0,
+      "address": "",
+      "cart": []
+    }
+  ],
+  "items": [
+    {
+      "name": "starter",
+      "qty": 10,
+      "price": 5
     }
   ],
   "comments": [

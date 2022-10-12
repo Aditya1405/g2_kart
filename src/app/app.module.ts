@@ -10,10 +10,12 @@ import { KartDashboardComponent } from './kart-dashboard/kart-dashboard.componen
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { KartDashNavComponent } from './kart-dash-nav/kart-dash-nav.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideAuth, getAuth } from '@angular/fire/auth';
 import { HotToastModule } from '@ngneat/hot-toast';
+import { ProfileComponent } from './profile/profile.component';
+import { MartComponent } from './mart/mart.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { HotToastModule } from '@ngneat/hot-toast';
     LoginComponent,
     SignupComponent,
     KartDashboardComponent,
-    KartDashNavComponent
+    KartDashNavComponent,
+    ProfileComponent,
+    MartComponent
   ],
   imports: [
     BrowserModule,

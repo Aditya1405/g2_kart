@@ -29,7 +29,8 @@ export class AuthService {
     return from(
       createUserWithEmailAndPassword(this.auth, email, password)
     ).pipe(
-      switchMap(({ user }) => updateProfile(user, { displayName: name }))
+      //photoURL:
+      switchMap(({ user }) => updateProfile(user, { displayName: name, }))
     )
   }
 

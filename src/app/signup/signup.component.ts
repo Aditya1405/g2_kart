@@ -4,6 +4,8 @@ import { FormGroup, FormBuilder, NonNullableFormBuilder } from '@angular/forms'
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
 import { AuthService } from '../services/authentication.service';
+import { ApiService } from '../shared/api.service';
+import { UserModel } from '../userDataModel';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -11,7 +13,13 @@ import { AuthService } from '../services/authentication.service';
 })
 export class SignupComponent implements OnInit {
   public signUpForm!: FormGroup;
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router, private authService: AuthService,
+  //use this to post your data
+  userDataModel: UserModel = new UserModel();
+  constructor(private formBuilder: FormBuilder,
+    private http: HttpClient,
+    private router: Router,
+    private authService: AuthService,
+    private api: ApiService,
     private toast: HotToastService,
     //private usersService: UsersService,
     private fb: NonNullableFormBuilder) { }
@@ -48,7 +56,7 @@ export class SignupComponent implements OnInit {
     //   complete: () => console.info('complete')
     // })
     console.log(this.signUpForm.value);
-    const { name, email, password } = this.signUpForm.value;
+    const { name, email, password, contact } = this.signUpForm.value;
     if (!this.signUpForm.valid || !name || !password || !email) {
       return;
     }
@@ -69,7 +77,18 @@ export class SignupComponent implements OnInit {
         error: ({ message }) => `${message}`
       })
     ).subscribe(() => {
+      this.postUserDetail(name, email);
+
       this.router.navigate(['/']);
     });
+  }
+  postUserDetail(name: string, email: string) {
+    this.userDataModel.name = name;
+    this.userDataModel.email = email;
+    this.api.post(this.userDataModel).subscribe({
+      next: (v) => console.log("success"),
+      error: (e) => console.error("failed"),
+      complete: () => console.info('complete')
+    })
   }
 }
