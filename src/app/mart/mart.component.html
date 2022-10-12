@@ -17,18 +17,19 @@
                     <!-- contents of card is inside card body -->
                     <!-- centralzie text with padding up and down as 4  -->
                     <div class="card-body text-center py-4">
-                        <h4 class="card-title">Starter Edition</h4>
-                        <p class="lead card-subtitle">eBook download only</p>
-                        <p class="display-5 my-4 text-primary fw-bold">$12.99</p>
+                        <h4 class="card-title">{{martDataModel.name}} Edition</h4>
+                        <p class="lead card-subtitle">{{martDataModel.qty}}</p>
+                        <p class="display-5 my-4 text-primary fw-bold">${{martDataModel.price}}</p>
                         <!-- do not display this body for small screen -->
                         <!-- <p class="card-text mx-5 text-muted d-none d-lg-block">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             Mollitia, vitae magni! Repellat commodi a fuga corporis saepe
                             dolorum.
                         </p> -->
-                        <a href="#" class="btn btn-outline-primary btn-lg mt-3">
+                        <button class="btn btn-outline-primary btn-lg mt-3" (click)="update(martDataModel.id)">
                             Buy Now
-                        </a>
+                        </button>
+
                     </div>
                 </div>
             </div>
