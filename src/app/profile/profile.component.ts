@@ -25,8 +25,8 @@ export class ProfileComponent implements OnInit {
       (v) => {
         this.email = JSON.stringify(v?.email);
         console.log("profile" + v?.email)
-        //this.getUserDetail(this.email);
-        this.userDataModel = this.authService.getUserDetail();
+        this.getUserDetail(this.email);
+        // this.userDataModel = this.authService.getUserDetail();
         console.log("from profile " + this.userDataModel)
       }
     )
@@ -34,17 +34,18 @@ export class ProfileComponent implements OnInit {
     //console.log("dashboard" + this.user$.name);
   }
 
-  // getUserDetail(email: string) {
-  //   //add email to get as aparam for get id
-  //   this.api.get(email).subscribe({
-  //     next: (v) => {
-  //       //console.log("profile = " + JSON.parse(v));
-  //       this.userDataModel = v[0];
-  //       console.log("success= " + this.userDataModel.cart.length);
-  //     },
-  //     error: (e) => console.error("failed"),
-  //     complete: () => console.info('complete')
-  //   })
-  // }
+  getUserDetail(email: string) {
+    //add email to get as aparam for get id
+    this.api.get(email).subscribe({
+      next: (v) => {
+        //console.log("profile = " + JSON.parse(v));
+        this.userDataModel = v[0];
+        console.log("success= " + this.userDataModel.cart.length);
+
+      },
+      error: (e) => console.error("failed"),
+      complete: () => console.info('complete')
+    })
+  }
 
 }

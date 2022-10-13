@@ -1,3 +1,4 @@
+import { MartModel } from "./martDataModel";
 export class UserModel {
     id: string = '';
     name: string = '';
@@ -5,6 +6,6 @@ export class UserModel {
     contact: number = 0;
     address: string = '';
     //need a separtae data model for cart
-    cart: [] = [];
+    cart: MartModel[] = [];
 
 }

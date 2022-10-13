@@ -10,70 +10,30 @@
         </div>
         <!-- we need cards which will go inside a grid -->
         <!-- g-0 means to eliminate the gap between cards or elements in this row: g-0->5  -->
-        <div class="row my-5 g-0 align-items-center justify-content-center">
+        <div class="row my-5 g-0 align-items-center justify-content-center" *ngFor="let i of martArray">
             <!-- for xxtra small 2 col width >> col-8 : then for large screen 4 col witdth : then for extra large its 3 col width -->
             <div class="col-8 col-lg-4 col-xl-3">
                 <div class="card border-0">
                     <!-- contents of card is inside card body -->
                     <!-- centralzie text with padding up and down as 4  -->
                     <div class="card-body text-center py-4">
-                        <h4 class="card-title">{{martDataModel.name}} Edition</h4>
-                        <p class="lead card-subtitle">{{martDataModel.qty}}</p>
-                        <p class="display-5 my-4 text-primary fw-bold">${{martDataModel.price}}</p>
+                        <h4 class="card-title">{{i.name}} Edition</h4>
+                        <p class="lead card-subtitle">{{i.qty}}</p>
+                        <p class="display-5 my-4 text-primary fw-bold">${{i.price}}</p>
                         <!-- do not display this body for small screen -->
                         <!-- <p class="card-text mx-5 text-muted d-none d-lg-block">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             Mollitia, vitae magni! Repellat commodi a fuga corporis saepe
                             dolorum.
                         </p> -->
-                        <button class="btn btn-outline-primary btn-lg mt-3" (click)="update(martDataModel.id)">
+                        <button class="btn btn-outline-primary btn-lg mt-3" (click)="update(i.id)">
                             Buy Now
                         </button>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-9 col-lg-4">
-                <div class="card border-primary border-2">
-                    <!--  this puts a little strip on top of the card to make it more popular -->
-                    <div class="card-header text-center text-primary">
-                        Most Popular
-                    </div>
-                    <div class="card-body text-center py-5">
-                        <h4 class="card-title">Complete Edition</h4>
-                        <p class="lead card-subtitle">eBook download & all updates</p>
-                        <p class="display-4 my-4 text-primary fw-bold">$18.99</p>
-                        <!-- <p class="card-text mx-5 text-muted d-none d-lg-block">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Mollitia, vitae magni! Repellat commodi a fuga corporis saepe
-                            dolorum.
-                        </p> -->
-                        <a href="#" class="btn btn-outline-primary btn-lg mt-3">
-                            Buy Now
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-8 col-lg-4 col-xl-3">
-                <div class="card border-0">
-                    <div class="card-body text-center py-4">
-                        <h4 class="card-title">Ultimate Edition</h4>
-                        <p class="lead card-subtitle">download, updates & extras</p>
-                        <p class="display-5 my-4 text-primary fw-bold">$24.99</p>
-                        <!-- <p class="card-text mx-5 text-muted d-none d-lg-block">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Mollitia, vitae magni! Repellat commodi a fuga corporis saepe
-                            dolorum.
-                        </p> -->
-                        <a href="#" class="btn btn-outline-primary btn-lg mt-3">
-                            Buy Now
-                        </a>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
     <!-- end container -->
 </section>

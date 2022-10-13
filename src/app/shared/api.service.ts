@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 //making api calls 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { map } from 'rxjs/operators'
-import { UrlSegment } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -46,7 +45,11 @@ export class ApiService {
   }
   //id = email
   update(data: any, id: string) {
-    return this.http.put<any>("http://localhost:3000/posts" + id, data).pipe(map((res: any) => {
+    var url = new URL("http://localhost:3000/posts");
+    url.searchParams.set("email", id);
+    let finalUrl = url.toString().replace('%22', '').replace('%40', '@').replace('%22', '');
+    return this.http.put<any>(finalUrl, data).pipe(map((res: any) => {
+      //console.log("form api res= " + res);
       return res;
     }))
   }

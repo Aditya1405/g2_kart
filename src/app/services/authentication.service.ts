@@ -7,8 +7,6 @@ import {
   updateProfile,
   UserInfo,
   UserCredential,
-  user,
-  User,
 } from '@angular/fire/auth';
 
 import { concatMap, from, Observable, of, switchMap } from 'rxjs';
@@ -23,50 +21,22 @@ export class AuthService implements OnInit {
   //they are going to return an obeservable of a user or null in case  not logged in
   currentUser$ = authState(this.auth);
 
-  //get user details for profile and mart
-  userDataModel: UserModel = new UserModel();
-  user$: Observable<User | null> | undefined
-  email?: string = "";
-  //
+
 
 
   constructor(private auth: Auth, private api: ApiService) { }
   ngOnInit() {
-    const cusObserve = new Observable(o => {
-      o.next(this.userDataModel);
-    })
-    cusObserve.subscribe({
-      next(value) {
-        console.log("new = " + value);
-      },
-    })
+    // const cusObserve = new Observable(o => {
+    //   o.next(this.userDataModel);
+    // })
+    // cusObserve.subscribe({
+    //   next(value) {
+    //     console.log("new = " + value);
+    //   },
+    // })
   }
 
-  //
-  getUserDetail() {
-    this.user$ = this.currentUser$;
-    this.user$.subscribe(
-      (v) => {
-        this.email = JSON.stringify(v?.email);
-        console.log("profile" + v?.email)
-        //this.getUserDetail(this.email);
-        //this.userDataModel=this.authService.getUserDetail();
-        this.api.get(this.email).subscribe({
-          next: (v) => {
-            //console.log("profile = " + JSON.parse(v));
-            this.userDataModel = v[0];
-            console.log("success= " + this.userDataModel.name);
-            //works
-          },
-          error: (e) => console.error("failed"),
-          complete: () => console.info('complete')
-        });
-      })
-    //add email to get as aparam for get id
-    console.log("success outside= " + this.userDataModel.name);
-    return this.userDataModel;
-  }
-  //
+
   // signUp(email: string, password: string): Observable<UserCredential> {
   //   return from(createUserWithEmailAndPassword(this.auth, email, password));
   // }
