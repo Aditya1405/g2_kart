@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { map } from 'rxjs';
 
-
+@Injectable({
+  providedIn: 'root'
+})
 export class MartApiService {
   newQty: number = 0;
   emitNum = new EventEmitter<number>();

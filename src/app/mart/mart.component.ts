@@ -66,25 +66,29 @@ export class MartComponent implements OnInit {
       next: (v) => {
         this.martArray = v;
         //this.martDataModel = v[0];
-        console.log("success for mart array= " + this.martArray.length);
+        console.log("up success for mart array= " + JSON.stringify(this.martArray));
       },
       error: (e) => console.error("failed"),
       complete: () => console.info('complete')
     })
   }
   update(id: number) {
-    console.log("mart id = " + id);
-    //check if curr item > 0
-    this.addToUserCart(id);
-    if (this.martDataModel.qty > 0) {
-      this.martDataModel.qty--;
-      //add to user cart if not already there else + 1
+    console.log("up mart id = " + id);
+    //get the martItemObject from mart array
 
+    //check if curr item > 0
+
+    if (this.martArray[id - 1].qty > 0) {
+      this.addToUserCart(id);
+      //console.log("up: martArrayId = " + JSON.stringify(this.martArray[id - 1]));
+      this.martArray[id - 1].qty--;
+      //add to user cart if not already there else + 1
+      //console.log("up: martArrayId = " + JSON.stringify(this.martArray[id - 1]));
     }
-    this.martApi.update(this.martDataModel, this.martDataModel.id).subscribe(
+    this.martApi.update(this.martArray[id - 1], id).subscribe(
       {
         next: (v) => {
-          console.log("success= ");
+          console.log("up: success= ");
         },
         error: (e) => console.error("failed"),
         complete: () => console.info('complete')
@@ -97,9 +101,10 @@ export class MartComponent implements OnInit {
   addToUserCart(id: number) {
     console.log("item id= " + id);
     //this.newQty++;
+    //this updates total count in cart nav
     this.martApi.updateCartCount();
     let mart = new MartModel();
-    mart = this.martArray[id - 1];
+    mart = Object.assign({}, this.martArray[id - 1]);
     if (this.userDataModel.cart.length == 0) {
       mart.qty = 1;
       this.userDataModel.cart.push(mart);
