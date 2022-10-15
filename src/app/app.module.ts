@@ -16,6 +16,8 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { ProfileComponent } from './profile/profile.component';
 import { MartComponent } from './mart/mart.component';
+import { UserCartComponent } from './user-cart/user-cart.component';
+import { MartApiService } from './shared/mart-api.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { MartComponent } from './mart/mart.component';
     KartDashboardComponent,
     KartDashNavComponent,
     ProfileComponent,
-    MartComponent
+    MartComponent,
+    UserCartComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,7 @@ import { MartComponent } from './mart/mart.component';
     provideAuth(() => getAuth()),
     HotToastModule.forRoot()
   ],
-  providers: [],
+  providers: [MartApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

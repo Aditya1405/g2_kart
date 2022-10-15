@@ -11,6 +11,7 @@ import {
   redirectUnauthorizedTo,
 } from '@angular/fire/auth-guard';
 import { ProfileComponent } from './profile/profile.component';
+import { UserCartComponent } from './user-cart/user-cart.component';
 //tells to generate a pipe and route our unlogged in user to login page
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 //when we are logged in already  it makes little sense to allow the user to login or sign up again,
@@ -25,7 +26,7 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent, ...canActivate(redirectLoggedInToHome) },
   { path: 'dashboard', component: KartDashboardComponent, ...canActivate(redirectUnauthorizedToLogin) },
   { path: 'profile', component: ProfileComponent, ...canActivate(redirectUnauthorizedToLogin) },
-
+  { path: 'cart', component: UserCartComponent, ...canActivate(redirectUnauthorizedToLogin) }
 ];
 
 @NgModule({

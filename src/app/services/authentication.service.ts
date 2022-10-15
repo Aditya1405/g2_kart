@@ -18,6 +18,7 @@ import { UserModel } from '../userDataModel';
 })
 
 export class AuthService implements OnInit {
+  
   //they are going to return an obeservable of a user or null in case  not logged in
   currentUser$ = authState(this.auth);
 

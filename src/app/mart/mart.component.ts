@@ -13,7 +13,7 @@ import { UserModel } from '../userDataModel';
   styleUrls: ['./mart.component.css']
 })
 export class MartComponent implements OnInit {
-  newQty: number = 0;
+
 
   //
   userDataModel: UserModel = new UserModel();
@@ -42,6 +42,7 @@ export class MartComponent implements OnInit {
     )
     //
     this.get();
+
   }
   //
   updateUserCart() {
@@ -74,9 +75,8 @@ export class MartComponent implements OnInit {
   update(id: number) {
     console.log("mart id = " + id);
     //check if curr item > 0
-    this.addToUserCart();
+    this.addToUserCart(id);
     if (this.martDataModel.qty > 0) {
-      this.newQty++;
       this.martDataModel.qty--;
       //add to user cart if not already there else + 1
 
@@ -93,13 +93,30 @@ export class MartComponent implements OnInit {
     console.log("pressed id= " + id);
   }
 
-  //
-  addToUserCart() {
-    //loop throught the cart
-    for (let i = 0; i < this.userDataModel.cart.length; i++) {
-      //if(this.userDataModel.cart[i].name==)
-      console.log("add user = " + i + " cart = " + this.userDataModel.cart[i].name);
+  //add to user cart in this page but does not updates it on the server
+  addToUserCart(id: number) {
+    console.log("item id= " + id);
+    //this.newQty++;
+    this.martApi.updateCartCount();
+    let mart = new MartModel();
+    mart = this.martArray[id - 1];
+    if (this.userDataModel.cart.length == 0) {
+      mart.qty = 1;
+      this.userDataModel.cart.push(mart);
+    } else {
+      let updatestatus: boolean = true;
+      for (let i = 0; i < this.userDataModel.cart.length; i++) {
+        if (this.userDataModel.cart[i].id == id) {
+          console.log("true");
+          this.userDataModel.cart[i].qty++;
+          updatestatus = false;
+        }
+      }
+      if (updatestatus) {
+        mart.qty = 1;
+        this.userDataModel.cart.push(mart);
+      }
     }
+    console.log("final cart = " + JSON.stringify(this.userDataModel.cart))
   }
-  //
 }
