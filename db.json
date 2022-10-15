@@ -34,7 +34,26 @@
       "email": "aditya@gmail.com",
       "contact": 0,
       "address": "",
-      "cart": []
+      "cart": [
+        {
+          "id": 1,
+          "name": "parle - G",
+          "qty": 3,
+          "price": 5
+        },
+        {
+          "id": 2,
+          "name": "Maggie",
+          "qty": 2,
+          "price": 5
+        },
+        {
+          "id": 3,
+          "name": "mountain dew",
+          "qty": 3,
+          "price": 5
+        }
+      ]
     }
   ],
   "items": [
@@ -47,13 +66,13 @@
     {
       "id": 2,
       "name": "Maggie",
-      "qty": 10,
+      "qty": 4,
       "price": 5
     },
     {
       "id": 3,
       "name": "mountain dew",
-      "qty": 10,
+      "qty": 7,
       "price": 5
     }
   ],

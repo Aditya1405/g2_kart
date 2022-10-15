@@ -17,12 +17,6 @@ export class ApiService {
     }))
   }
 
-  // get() {
-  //   return this.http.get<any>("http://localhost:3000/posts" + "?email=isha@gmail.com").pipe(map((res: any) => {
-  //     console.log(res[0].name);
-  //     return res;
-  //   }))
-  // }
 
   //get by id
 
@@ -32,10 +26,6 @@ export class ApiService {
     console.log("url = " + "http://localhost:3000/posts?email=" + id);
     var url = new URL("http://localhost:3000/posts");
     url.searchParams.set("email", id);
-    //let params = new URLSearchParams(url.search);
-    //params.append('email', id);
-    //url.searchParams.append("email", id);
-    //console.log("url replace  = " + url.toString().replace('%22', '').replace('%40', '@').replace('%22', ''));
     let finalUrl = url.toString().replace('%22', '').replace('%40', '@').replace('%22', '');
     console.log("url cleans  = " + finalUrl);
     return this.http.get<any>(finalUrl).pipe(map((res: any) => {
@@ -44,12 +34,11 @@ export class ApiService {
     }))
   }
   //id = email
-  update(data: any, id: string) {
-    var url = new URL("http://localhost:3000/posts");
-    url.searchParams.set("email", id);
-    let finalUrl = url.toString().replace('%22', '').replace('%40', '@').replace('%22', '');
-    return this.http.put<any>(finalUrl, data).pipe(map((res: any) => {
-      //console.log("form api res= " + res);
+  updateUserInfo(data: any, id: string) {
+    console.log("api update data = " + JSON.stringify(data));
+    console.log("url = " + "http://localhost:3000/posts/" + id);
+    return this.http.put<any>("http://localhost:3000/posts/" + id, data).pipe(map((res: any) => {
+      console.log("apiUser" + JSON.stringify(res));
       return res;
     }))
   }

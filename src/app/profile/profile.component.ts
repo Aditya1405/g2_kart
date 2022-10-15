@@ -18,7 +18,9 @@ export class ProfileComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private api: ApiService) { }
+    private api: ApiService,
+    private router: Router,
+  ) { }
   ngOnInit(): void {
     this.user$ = this.authService.currentUser$;
     this.user$.subscribe(
@@ -47,5 +49,7 @@ export class ProfileComponent implements OnInit {
       complete: () => console.info('complete')
     })
   }
-
+  back() {
+    this.router.navigate(['/dashboard']);
+  }
 }

@@ -44,10 +44,7 @@ export class MartComponent implements OnInit {
     this.get();
 
   }
-  //
-  updateUserCart() {
 
-  }
   getUserDetail(email: string) {
     //add email to get as aparam for get id
     this.api.get(email).subscribe({
@@ -122,6 +119,16 @@ export class MartComponent implements OnInit {
         this.userDataModel.cart.push(mart);
       }
     }
-    console.log("final cart = " + JSON.stringify(this.userDataModel.cart))
+    console.log("final cart = " + JSON.stringify(this.userDataModel));
+    //push to user cart
+    this.api.updateUserInfo(this.userDataModel, this.userDataModel.id).subscribe(
+      {
+        next: (v) => {
+          console.log("Usr: success= " + JSON.stringify(v));
+        },
+        error: (e) => console.error("failed"),
+        complete: () => console.info('complete')
+      }
+    );
   }
 }
