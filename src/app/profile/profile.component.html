@@ -6,7 +6,7 @@
 <p>{{userDataModel.contact}}</p>
 <p>{{userDataModel.address}}</p>
 <ul *ngFor="let i of userDataModel.cart">
-    <li>{{i}}</li>
+    <li>{{i.name}} => {{i.qty}} x {{i.price}}</li>
 </ul>
 <button (click)="back()">
     go back

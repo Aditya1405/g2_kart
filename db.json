@@ -50,7 +50,7 @@
         {
           "id": 3,
           "name": "mountain dew",
-          "qty": 3,
+          "qty": 4,
           "price": 5
         }
       ]
@@ -72,7 +72,7 @@
     {
       "id": 3,
       "name": "mountain dew",
-      "qty": 7,
+      "qty": 6,
       "price": 5
     }
   ],
