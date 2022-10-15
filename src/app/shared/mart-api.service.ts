@@ -1,14 +1,17 @@
 import { HttpClient } from '@angular/common/http';
-import { EventEmitter, Injectable } from '@angular/core';
+import { EventEmitter, Injectable, OnInit } from '@angular/core';
 import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MartApiService {
+export class MartApiService implements OnInit {
   newQty: number = 0;
   emitNum = new EventEmitter<number>();
   constructor(private http: HttpClient) { }
+  ngOnInit(): void {
+    console.log("mart Api ngoninit");
+  }
   get() {
     return this.http.get<any>("http://localhost:3000/items").pipe(map((res: any) => {
       console.log(res[0]);

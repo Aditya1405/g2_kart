@@ -1,1 +1,15 @@
-<p>user-cart works!</p>
+<ul *ngFor="let i of userDataModel.cart">
+
+    <li>{{i.name}} => {{i.qty}} x {{i.price}}
+        <button (click)="onInc(i.id)">
+            inc
+        </button>
+        <button (click)="onDec(i.id)">
+            dec
+        </button>
+    </li>
+
+</ul>
+<button routerLink="/dashboard">
+    go back
+</button>

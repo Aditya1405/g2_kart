@@ -18,6 +18,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { MartComponent } from './mart/mart.component';
 import { UserCartComponent } from './user-cart/user-cart.component';
 import { MartApiService } from './shared/mart-api.service';
+import { UserDataService } from './shared/user-data.service';
+import { ApiService } from './shared/api.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,7 @@ import { MartApiService } from './shared/mart-api.service';
     provideAuth(() => getAuth()),
     HotToastModule.forRoot()
   ],
-  providers: [MartApiService],
+  providers: [MartApiService, UserDataService, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

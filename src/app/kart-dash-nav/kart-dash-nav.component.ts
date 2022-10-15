@@ -21,11 +21,9 @@ export class KartDashNavComponent implements OnInit {
   ) { }
   ngOnInit(): void {
     this.user$ = this.authService.currentUser$;
-    //console.log("dashboard" + this.user$.name);
     this.service.emitNum.subscribe(
       (count: number) => {
         this.toggle = count;
-        console.log("rec" + this.toggle);
       }
     );
 

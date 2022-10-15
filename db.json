@@ -14,8 +14,20 @@
       "cart": [
         {
           "id": 1,
-          "name": "starter",
-          "qty": 8,
+          "name": "parle - G",
+          "qty": 1,
+          "price": 5
+        },
+        {
+          "id": 2,
+          "name": "Maggie",
+          "qty": 2,
+          "price": 5
+        },
+        {
+          "id": 3,
+          "name": "mountain dew",
+          "qty": 1,
           "price": 5
         }
       ]
@@ -36,21 +48,15 @@
       "address": "",
       "cart": [
         {
-          "id": 1,
-          "name": "parle - G",
-          "qty": 3,
-          "price": 5
-        },
-        {
           "id": 2,
           "name": "Maggie",
-          "qty": 2,
+          "qty": 1,
           "price": 5
         },
         {
           "id": 3,
           "name": "mountain dew",
-          "qty": 4,
+          "qty": 1,
           "price": 5
         }
       ]
@@ -60,19 +66,19 @@
     {
       "id": 1,
       "name": "parle - G",
-      "qty": 0,
+      "qty": 9,
       "price": 5
     },
     {
       "id": 2,
       "name": "Maggie",
-      "qty": 4,
+      "qty": 7,
       "price": 5
     },
     {
       "id": 3,
       "name": "mountain dew",
-      "qty": 6,
+      "qty": 8,
       "price": 5
     }
   ],
