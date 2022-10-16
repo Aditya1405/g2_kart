@@ -24,8 +24,8 @@
                     <a class="nav-link" routerLink="/dashboard">About The Book</a>
                 </li> -->
                 <li class="nav-item" *ngIf="user$ | async as user">
-                    <a class="nav-link" routerLink="/cart" (click)="setTotalCost()">
-                        <span><i class="bi bi-cart-fill h4"></i></span> Cart = {{CC}}</a>
+                    <a class=" btn btn-secondary" routerLink="/cart" (click)="setTotalCost()">
+                        <span><i class="bi bi-cart-fill "></i></span> Cart = {{CC}}</a>
                 </li>
 
                 <li class="nav-item ms-2 d-none d-md-inline" *ngIf="user$ | async as user">

@@ -38,7 +38,7 @@
         {
           "id": 3,
           "name": "G.O.A.T",
-          "qty": 2,
+          "qty": 4,
           "price": 1299,
           "imageSrc": "assets/shopping.webp"
         },
@@ -86,7 +86,7 @@
     {
       "id": 3,
       "name": "G.O.A.T",
-      "qty": 7,
+      "qty": 5,
       "price": 1299,
       "imageSrc": "assets/shopping.webp"
     }

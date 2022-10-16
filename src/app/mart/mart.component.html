@@ -12,14 +12,14 @@
         <div class="row my-5  align-items-center justify-content-center">
             <!-- for xxtra small 2 col width >> col-8 : then for large screen 4 col witdth : then for extra large its 3 col width -->
             <div class="col-8 col-lg-4 col-xl-3" *ngFor="let i of martArray">
-                <div class="card border-0">
+                <div class="card card-style1 border-0">
 
                     <div class="card-body text-center py-4">
                         <h4 class="card-title">{{i.name}} Edition</h4>
                         <img [src]="i.imageSrc" class="figure-img img-fluid rounded" alt="moto">
 
-                        <p class="lead card-subtitle">{{i.qty}}</p>
-                        <p class="display-5 my-4 text-primary fw-bold">${{i.price}}</p>
+                        <p class="lead card-subtitle ">only {{i.qty}} left !</p>
+                        <p class="h4 my-4 text-primary fw-bold">${{i.price}}</p>
 
                         <button class="btn btn-outline-primary btn-lg mt-3" (click)="update(i.id)">
                             Buy Now
