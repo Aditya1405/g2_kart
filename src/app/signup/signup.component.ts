@@ -35,56 +35,34 @@ export class SignupComponent implements OnInit {
     })
   }
   signUp() {
-    console.log('works');
-    // this.http.post<any>("http://localhost:3000/signupUsers", this.signupForm.value).subscribe(res => {
-    //   alert("Signup Successfull");
-    //   this.signupForm.reset();
-    //   this.router.navigate(['login']);
-    // }, err => {
-    //   alert("Something went wrong")
-    // })
-    // this.http.post<any>("http://localhost:3000/signupUsers", this.signupForm.value).subscribe({
-    //   next: (v) => {
-    //     alert("Signup Successfull");
-    //     this.signupForm.reset();
-    //     this.router.navigate(['login']);
-    //   },
-    //   error: (e) => {
-    //     alert("Something went wrong")
 
-    //   },
-    //   complete: () => console.info('complete')
-    // })
     console.log(this.signUpForm.value);
-    const { name, email, password, contact } = this.signUpForm.value;
-    if (!this.signUpForm.valid || !name || !password || !email) {
+    const { name, email, password, contact, address } = this.signUpForm.value;
+    if (!this.signUpForm.valid || !name || !password || !email || !contact || !address) {
       return;
     }
 
 
     this.authService.signUp(name, email, password).pipe(
-      // switchMap(({ user: { uid } }) =>
-      //   this.usersService.addUser({ uid, email, displayName: name })
-      // ),
-      // this.toast.observe({
-      //   success: 'Congrats! You are all signed up',
-      //   loading: 'Signing up...',
-      //   error: ({ message }) => `${message}`,
-      // })
+
       this.toast.observe({
         success: 'congrats = signup',
         loading: 'signing in',
         error: ({ message }) => `${message}`
       })
     ).subscribe(() => {
-      this.postUserDetail(name, email);
+      this.postUserDetail(name, email, contact, address);
 
       this.router.navigate(['/']);
     });
+
   }
-  postUserDetail(name: string, email: string) {
+
+  postUserDetail(name: string, email: string, contact: number, address: string) {
     this.userDataModel.name = name;
     this.userDataModel.email = email;
+    this.userDataModel.address = address;
+    this.userDataModel.contact = contact;
     this.api.post(this.userDataModel).subscribe({
       next: (v) => console.log("success"),
       error: (e) => console.error("failed"),

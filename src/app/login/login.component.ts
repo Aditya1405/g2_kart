@@ -52,8 +52,9 @@ export class LoginComponent implements OnInit {
       )
       .subscribe(() => {
         this.router.navigate(['/dashboard']);
+        this.usrData.totalCost();
       });
-    // this.usrData.totalCost();
+
     //this.Ka.ngOnInit();
   }
 

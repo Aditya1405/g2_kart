@@ -38,7 +38,7 @@
         {
           "id": 3,
           "name": "G.O.A.T",
-          "qty": 4,
+          "qty": 5,
           "price": 1299,
           "imageSrc": "assets/shopping.webp"
         },
@@ -66,6 +66,22 @@
           "imageSrc": "assets/shopping.webp"
         }
       ]
+    },
+    {
+      "id": 7,
+      "name": "test",
+      "email": "test@gmail.com",
+      "contact": 1234567890,
+      "address": "Patna, India",
+      "cart": [
+        {
+          "id": 2,
+          "name": "i-14",
+          "qty": 1,
+          "price": 399,
+          "imageSrc": "assets/iphone_14_render.webp"
+        }
+      ]
     }
   ],
   "items": [
@@ -79,14 +95,14 @@
     {
       "id": 2,
       "name": "i-14",
-      "qty": 8,
+      "qty": 7,
       "price": 399,
       "imageSrc": "assets/iphone_14_render.webp"
     },
     {
       "id": 3,
       "name": "G.O.A.T",
-      "qty": 5,
+      "qty": 4,
       "price": 1299,
       "imageSrc": "assets/shopping.webp"
     }
