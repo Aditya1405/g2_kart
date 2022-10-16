@@ -1,32 +1,44 @@
 <!-- main image & intro text -->
-<section id="intro">
-    <div class="container-lg">
-        <div class="row justify-content-center align-items-center">
-            <div class="col-md-5 text-center text-md-start">
-                <h1>
-                    <div class="display-6">Samsung Galaxy Z Flip</div>
-                    <!-- light grey text for the below = text-muted -->
-                    <div class="display-6 text-muted">Unfold Your World</div>
-                </h1>
-                <p class="lead my-4 text-muted">
-                    Limited Edition
-                </p>
+<section id="intro" class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mb-4 mb-sm-5">
+                <div class="card card-style1 border-0">
+                    <div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
+                        <div class="container-lg">
+                            <div class="row justify-content-center align-items-center">
+                                <div class="col-md-5 text-center text-md-start">
+                                    <h1>
+                                        <div class="display-6">Samsung Galaxy Z Flip</div>
+                                        <!-- light grey text for the below = text-muted -->
+                                        <div class="h4 text-muted">Unfold Your World</div>
+                                    </h1>
+                                    <p class="lead my-4 text-muted">
+                                        Limited Edition
+                                    </p>
 
-                <!-- open sidebar / offcanvas -->
-                <a (click)="onClick('s')" class="btn btn-secondary btn-large" data-bs-toggle="offcanvas" role="button"
-                    aria-controls="sidebar">
-                    Explore More
-                </a>
-            </div>
-            <!-- d-none means do not display for small screes d-block whean reach to mid screen then d-md-block-->
-            <div class="col-md-7 text-center d-none d-md-block">
-                <span class="tt" data-bs-placement="bottom" title="Net Ninja Pro book cover">
-                    <!-- img-fluid = This will make it 100% width of the parent element -->
-                    <img class="img-fluid" src="assets/smartphone-20.12.2021.jpg" alt="ebook-cover" />
-                </span>
+                                    <!-- open sidebar / offcanvas -->
+                                    <a (click)="onClick('s')" class="btn btn-secondary btn-large"
+                                        data-bs-toggle="offcanvas" role="button" aria-controls="sidebar">
+                                        Explore More
+                                    </a>
+                                </div>
+                                <!-- d-none means do not display for small screes d-block whean reach to mid screen then d-md-block-->
+                                <div class="col-md-7 text-center d-none d-md-block">
+                                    <span class="tt" data-bs-placement="bottom" title="smart phone cover">
+                                        <!-- img-fluid = This will make it 100% width of the parent element -->
+                                        <img class="img-fluid" src="assets/smartphone-20.12.2021.jpg"
+                                            alt="smart phone" />
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
 </section>
 
 <app-mart id="s"></app-mart>

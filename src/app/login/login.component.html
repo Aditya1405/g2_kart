@@ -1,61 +1,76 @@
 <!-- form-control, form-label, form-select, input-group, input-group-text -->
-<section id="contact">
-    <div class="container-lg">
-        <div class="text-center">
-            <h2>Welcome to Kart services</h2>
-            <p class="lead">
-                Please login
-            </p>
-        </div>
+<section id="contact" class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mb-4 mb-sm-5">
+                <div class="card card-style1 border-0">
+                    <div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
+                        <div class="container-lg mt-5">
+                            <div class="text-center">
+                                <h2>Welcome to Kart services</h2>
+                                <p class="lead">
+                                    Please login
+                                </p>
+                            </div>
 
-        <div class="row justify-content-center my-5">
-            <!-- extra small to large full widht and after that 6 col width -->
-            <div class="col-lg-6">
-                <form [formGroup]="loginForm" (ngSubmit)="login()">
+                            <div class="row justify-content-center my-5">
+                                <!-- extra small to large full widht and after that 6 col width -->
+                                <div class="col-lg-6">
+                                    <form [formGroup]="loginForm" (ngSubmit)="login()">
 
-                    <label for="email" class="form-label">Email address:</label>
-                    <div class="input-group mb-4">
-                        <!-- extra mail icon you see on the group -->
-                        <span class="input-group-text">
-                            <i class="bi bi-envelope-fill text-secondary"></i>
-                        </span>
-                        <input formControlName="email" type="text" id="email" class="form-control"
-                            placeholder="e.g. mario@example.com" />
-                        <span class="input-group-text">
-                            <span class="tt" data-bs-placement="bottom" title="Enter an email address we can reply to.">
-                                <i class="bi bi-question-circle text-muted"></i>
-                            </span>
-                        </span>
+                                        <label for="email" class="form-label">Email address:</label>
+                                        <div class="input-group mb-4">
+                                            <!-- extra mail icon you see on the group -->
+                                            <span class="input-group-text">
+                                                <i class="bi bi-envelope-fill text-secondary"></i>
+                                            </span>
+                                            <input formControlName="email" type="text" id="email" class="form-control"
+                                                placeholder="e.g. mario@example.com" />
+                                            <span class="input-group-text">
+                                                <span class="tt" data-bs-placement="bottom"
+                                                    title="Enter an email address we can reply to.">
+                                                    <i class="bi bi-question-circle text-muted"></i>
+                                                </span>
+                                            </span>
+                                        </div>
+
+                                        <label for="password" class="form-label">Password:</label>
+                                        <div class="mb-4 input-group">
+                                            <span class="input-group-text">
+                                                <i class="bi bi-key-fill text-secondary"></i>
+                                            </span>
+                                            <input formControlName="password" type="password" id="password"
+                                                class="form-control" placeholder="abc123" />
+                                            <!-- tooltip -->
+                                            <span class="input-group-text">
+                                                <span class="tt" data-bs-placement="bottom"
+                                                    title="Please share your contact.">
+                                                    <i class="bi bi-question-circle text-muted"></i>
+                                                </span>
+                                            </span>
+                                        </div>
+
+                                        <div class="mb-4 text-center">
+                                            <button type="submit" class="btn btn-secondary">Submit</button>
+                                        </div>
+                                        <!-- <a href="#">asdsad</a> -->
+
+                                        <a routerLink="/signup">New User? Click to Sign Up</a>
+                                        <!-- <nav>
+                                            <a routerLink="/heroes">Heroes</a>
+                                        </nav> -->
+                                        <!-- <router-outlet></router-outlet> -->
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-                    <label for="password" class="form-label">Password:</label>
-                    <div class="mb-4 input-group">
-                        <span class="input-group-text">
-                            <i class="bi bi-key-fill text-secondary"></i>
-                        </span>
-                        <input formControlName="password" type="password" id="password" class="form-control"
-                            placeholder="abc123" />
-                        <!-- tooltip -->
-                        <span class="input-group-text">
-                            <span class="tt" data-bs-placement="bottom" title="Please share your contact.">
-                                <i class="bi bi-question-circle text-muted"></i>
-                            </span>
-                        </span>
-                    </div>
-
-                    <div class="mb-4 text-center">
-                        <button type="submit" class="btn btn-secondary">Submit</button>
-                    </div>
-                    <!-- <a href="#">asdsad</a> -->
-
-                    <a routerLink="/signup">New User? Click to Sign Up</a>
-                    <!-- <nav>
-                        <a routerLink="/heroes">Heroes</a>
-                    </nav> -->
-                    <!-- <router-outlet></router-outlet> -->
-                </form>
-
+                </div>
             </div>
         </div>
     </div>
+
+
+
 </section>
