@@ -39,21 +39,21 @@ export class UserCartComponent implements OnInit {
     );
     console.log("TDA out" + this.totalAmount);
   }
-  getTA() {
-    console.log("TDA out" + this.totalAmount);
-  }
-  // totalCost() {
-  //   let tc: number = 0;
-  //   this.martArray = this.userDataModel.cart;
-  //   for (let i = 0; i < this.martArray.length; i++) {
-  //     let amt = this.martArray[i].price;
-  //     let qty = this.martArray[i].qty;
-  //     let cost = qty * amt;
-  //     tc += cost;
-  //   }
-  //   this.totalAmount = tc;
-  //   console.log("tc" + tc);
-  //   return tc;
+  // getTA() {
+  //   console.log("TDA out" + this.totalAmount);
   // }
+  totalCost() {
+    let tc: number = 0;
+    this.martArray = this.userDataModel.cart;
+    for (let i = 0; i < this.martArray.length; i++) {
+      let amt = this.martArray[i].price;
+      let qty = this.martArray[i].qty;
+      let cost = qty * amt;
+      tc += cost;
+    }
+    this.totalAmount = tc;
+    console.log("tc" + tc);
+    return tc;
+  }
 
 }

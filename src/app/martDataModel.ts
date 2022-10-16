@@ -3,4 +3,5 @@ export class MartModel {
     name: string = '';
     qty: number = 0;
     price: number = 0;
+    imageSrc: string = "";
 }

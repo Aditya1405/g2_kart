@@ -9,61 +9,45 @@
       "id": 3,
       "name": "isha",
       "email": "isha@gmail.com",
-      "contact": 123,
+      "contact": 1234567890,
       "address": "bengaluru, karanatakas",
-      "cart": [
-        {
-          "id": 1,
-          "name": "parle - G",
-          "qty": 2,
-          "price": 5
-        },
-        {
-          "id": 2,
-          "name": "Maggie",
-          "qty": 2,
-          "price": 5
-        },
-        {
-          "id": 3,
-          "name": "mountain dew",
-          "qty": 3,
-          "price": 5
-        }
-      ]
+      "cart": []
     },
     {
       "id": 4,
       "name": "alankriti",
       "email": "alankriti@gmail.com",
-      "contact": 0,
-      "address": "",
+      "contact": 1234567890,
+      "address": "bengaluru, karanatakas",
       "cart": []
     },
     {
       "id": 5,
       "name": "Aditya",
       "email": "aditya@gmail.com",
-      "contact": 0,
-      "address": "",
+      "contact": 7667283566,
+      "address": "bengaluru, karanatakas",
       "cart": [
         {
           "id": 2,
-          "name": "Maggie",
-          "qty": 6,
-          "price": 5
+          "name": "i-14",
+          "qty": 2,
+          "price": 399,
+          "imageSrc": "assets/iphone_14_render.webp"
         },
         {
           "id": 3,
-          "name": "mountain dew",
-          "qty": 5,
-          "price": 5
+          "name": "G.O.A.T",
+          "qty": 2,
+          "price": 1299,
+          "imageSrc": "assets/shopping.webp"
         },
         {
           "id": 1,
-          "name": "parle - G",
-          "qty": 7,
-          "price": 5
+          "name": "moto-razr",
+          "qty": 2,
+          "price": 199,
+          "imageSrc": "assets/moto-razr.webp"
         }
       ]
     },
@@ -71,36 +55,32 @@
       "id": 6,
       "name": "sai",
       "email": "sai@gmail.com",
-      "contact": 0,
-      "address": "",
-      "cart": [
-        {
-          "id": 3,
-          "name": "mountain dew",
-          "qty": 1,
-          "price": 5
-        }
-      ]
+      "contact": 1234567890,
+      "address": "bengaluru, karanatakas",
+      "cart": []
     }
   ],
   "items": [
     {
       "id": 1,
-      "name": "parle - G",
-      "qty": 1,
-      "price": 5
+      "name": "moto-razr",
+      "qty": 8,
+      "price": 199,
+      "imageSrc": "assets/moto-razr.webp"
     },
     {
       "id": 2,
-      "name": "Maggie",
-      "qty": 2,
-      "price": 5
+      "name": "i-14",
+      "qty": 8,
+      "price": 399,
+      "imageSrc": "assets/iphone_14_render.webp"
     },
     {
       "id": 3,
-      "name": "mountain dew",
-      "qty": 1,
-      "price": 5
+      "name": "G.O.A.T",
+      "qty": 8,
+      "price": 1299,
+      "imageSrc": "assets/shopping.webp"
     }
   ],
   "comments": [

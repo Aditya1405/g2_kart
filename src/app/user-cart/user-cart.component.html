@@ -1,12 +1,12 @@
 <ul *ngFor="let i of userDataModel.cart">
 
-    <li>{{i.name}} => {{i.qty}} x {{i.price}}
+    <li>{{i.name}} => {{i.qty}} x {{i.price | currency}}
 
     </li>
 
 </ul>
-<p>total price {{totalAmount}}</p>
-<button (click)="getTA()">
+<p>total price {{totalAmount | currency }}</p>
+<button (click)="totalCost()">
     total
 </button>
 <button routerLink="/dashboard">
