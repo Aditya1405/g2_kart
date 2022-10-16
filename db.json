@@ -45,7 +45,7 @@
         {
           "id": 1,
           "name": "moto-razr",
-          "qty": 2,
+          "qty": 3,
           "price": 199,
           "imageSrc": "assets/moto-razr.webp"
         }
@@ -57,14 +57,22 @@
       "email": "sai@gmail.com",
       "contact": 1234567890,
       "address": "bengaluru, karanatakas",
-      "cart": []
+      "cart": [
+        {
+          "id": 3,
+          "name": "G.O.A.T",
+          "qty": 1,
+          "price": 1299,
+          "imageSrc": "assets/shopping.webp"
+        }
+      ]
     }
   ],
   "items": [
     {
       "id": 1,
       "name": "moto-razr",
-      "qty": 8,
+      "qty": 7,
       "price": 199,
       "imageSrc": "assets/moto-razr.webp"
     },
@@ -78,7 +86,7 @@
     {
       "id": 3,
       "name": "G.O.A.T",
-      "qty": 8,
+      "qty": 7,
       "price": 1299,
       "imageSrc": "assets/shopping.webp"
     }

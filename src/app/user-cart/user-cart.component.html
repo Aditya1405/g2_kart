@@ -1,14 +1,51 @@
-<ul *ngFor="let i of userDataModel.cart">
+<section class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mb-4 mb-sm-5">
+                <div class="card card-style1 border-0">
+                    <div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
+                        <div class="row align-items-center">
+                            <div class="col-lg-8 px-xl-10 bg-light">
 
-    <li>{{i.name}} => {{i.qty}} x {{i.price | currency}}
+                                <!-- <div class="d-flex bd-highlight">
+                                    <div class="p-2 flex-grow-1 bd-highlight">Flex item</div>
+                                    <div class="p-2 bd-highlight">Flex item</div>
+                                    <div class="p-2 bd-highlight">Third flex item</div>
+                                </div> -->
 
-    </li>
+                                <div class="col-lg-8  mb-3" style="width: 100%;" *ngFor="let i of userDataModel.cart">
+                                    <div class="card card-style1 border-0">
+                                        <div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7 d-flex bd-highlight">
+                                            <div class=" flex-grow-1 bd-highlight">
+                                                <span>
+                                                    <h4>{{i.name}}</h4>
+                                                </span>
+                                                {{i.qty}} x {{i.price | currency}}
+                                            </div>
+                                            <div class="p-2 bd-highlight">
+                                                <img class="img-thumbnail" [src]="i.imageSrc" alt="..." />
+                                            </div>
 
-</ul>
-<p>total price {{totalAmount | currency }}</p>
-<button (click)="totalCost()">
-    total
-</button>
-<button routerLink="/dashboard">
-    go back
-</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-4 mb-4 mb-lg-0">
+                                <h2>Total price: {{totalAmount | currency }}</h2>
+                                <button class="btn btn-primary" (click)="totalCost()">
+                                    total
+                                </button>
+                                <hr>
+                                <button class="btn btn-primary" routerLink="/dashboard">
+                                    go back
+                                </button>
+                                <!-- <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="..." /> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
