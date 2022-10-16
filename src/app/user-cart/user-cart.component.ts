@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MartModel } from '../martDataModel';
 import { UserDataService } from '../shared/user-data.service';
 import { UserModel } from '../userDataModel';
 
@@ -11,6 +12,11 @@ import { UserModel } from '../userDataModel';
 export class UserCartComponent implements OnInit {
 
   userDataModel: UserModel = new UserModel();
+
+  martDataModel: MartModel = new MartModel();
+  martArray: MartModel[] = [];
+
+  totalAmount: number | undefined;
 
   constructor(
     private router: Router,
@@ -24,14 +30,30 @@ export class UserCartComponent implements OnInit {
         this.userDataModel = data;
         console.log("UDM model" + JSON.stringify(this.userDataModel));
       }
-    )
+    );
+    this.usrData.emitTA.subscribe(
+      (data: number) => {
+        this.totalAmount = data;
+        console.log("TDA" + this.totalAmount);
+      }
+    );
+    console.log("TDA out" + this.totalAmount);
   }
-
-  onInc(id: number) {
-    console.log("inc = " + id);
+  getTA() {
+    console.log("TDA out" + this.totalAmount);
   }
-  onDec(id: number) {
-    console.log("dec = " + id);
-  }
+  // totalCost() {
+  //   let tc: number = 0;
+  //   this.martArray = this.userDataModel.cart;
+  //   for (let i = 0; i < this.martArray.length; i++) {
+  //     let amt = this.martArray[i].price;
+  //     let qty = this.martArray[i].qty;
+  //     let cost = qty * amt;
+  //     tc += cost;
+  //   }
+  //   this.totalAmount = tc;
+  //   console.log("tc" + tc);
+  //   return tc;
+  // }
 
 }

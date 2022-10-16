@@ -105,6 +105,7 @@ export class MartComponent implements OnInit {
         this.userDataModel.cart.push(mart);
       }
     }
+
     console.log("final cart = " + JSON.stringify(this.userDataModel));
     //push to user cart
     this.api.updateUserInfo(this.userDataModel, this.userDataModel.id).subscribe(

@@ -1,15 +1,14 @@
 <ul *ngFor="let i of userDataModel.cart">
 
     <li>{{i.name}} => {{i.qty}} x {{i.price}}
-        <button (click)="onInc(i.id)">
-            inc
-        </button>
-        <button (click)="onDec(i.id)">
-            dec
-        </button>
+
     </li>
 
 </ul>
+<p>total price {{totalAmount}}</p>
+<button (click)="getTA()">
+    total
+</button>
 <button routerLink="/dashboard">
     go back
 </button>

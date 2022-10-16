@@ -50,12 +50,18 @@
         {
           "id": 2,
           "name": "Maggie",
-          "qty": 1,
+          "qty": 2,
           "price": 5
         },
         {
           "id": 3,
           "name": "mountain dew",
+          "qty": 1,
+          "price": 5
+        },
+        {
+          "id": 1,
+          "name": "parle - G",
           "qty": 1,
           "price": 5
         }
@@ -66,13 +72,13 @@
     {
       "id": 1,
       "name": "parle - G",
-      "qty": 9,
+      "qty": 8,
       "price": 5
     },
     {
       "id": 2,
       "name": "Maggie",
-      "qty": 7,
+      "qty": 6,
       "price": 5
     },
     {

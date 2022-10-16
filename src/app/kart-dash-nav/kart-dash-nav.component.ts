@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from '../services/authentication.service';
 import { MartApiService } from '../shared/mart-api.service';
+import { UserDataService } from '../shared/user-data.service';
 
 @Component({
   selector: 'app-kart-dash-nav',
@@ -17,7 +18,8 @@ export class KartDashNavComponent implements OnInit {
     private authService: AuthService,
     // public usersService: UsersService,
     private router: Router,
-    private service: MartApiService
+    private service: MartApiService,
+    private usrData: UserDataService
   ) { }
   ngOnInit(): void {
     this.user$ = this.authService.currentUser$;
@@ -35,7 +37,7 @@ export class KartDashNavComponent implements OnInit {
     });
   }
 
-  getItemCount() {
-
+  setTotalCost() {
+    this.usrData.totalCost();
   }
 }
