@@ -20,6 +20,7 @@ import { UserCartComponent } from './user-cart/user-cart.component';
 import { MartApiService } from './shared/mart-api.service';
 import { UserDataService } from './shared/user-data.service';
 import { ApiService } from './shared/api.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { ApiService } from './shared/api.service';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    NgbModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     HotToastModule.forRoot()

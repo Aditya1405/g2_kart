@@ -16,6 +16,8 @@ export class KartDashNavComponent implements OnInit {
   user$: Observable<User | null> | undefined
   toggle: number = 0;
   CC: number = 0;
+
+  customId: string = "main-nav";
   //total: number = this.toggle + this.CC
   constructor(
     private authService: AuthService,
