@@ -20,22 +20,22 @@
         <div class="collapse navbar-collapse justify-content-end align-center " id="main-nav">
             <!-- navbar-nav is for styling  -->
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">About The Book</a>
+                <li class="nav-item" *ngIf="user$ | async as user">
+                    <a class="nav-link" routerLink="/dashboard">About The Book</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/cart" routerLinkActive="active" (click)="setTotalCost()">
-                        <span><i class="bi bi-cart-fill"></i></span> Cart = {{toggle}}</a>
+                <li class="nav-item" *ngIf="user$ | async as user">
+                    <a class="nav-link" routerLink="/cart" (click)="setTotalCost()">
+                        <span><i class="bi bi-cart-fill"></i></span> Cart = {{CC}}</a>
                 </li>
 
-                <li class="nav-item ms-2 d-none d-md-inline">
+                <li class="nav-item ms-2 d-none d-md-inline" *ngIf="user$ | async as user">
                     <a routerLink="/profile" class="btn btn-secondary"><span><i class="bi bi-person-circle"></i></span>
                         <ng-container *ngIf="user$ | async as user">
                             {{user.displayName}}
                         </ng-container>
                     </a>
                 </li>
-                <li class="nav-item ms-2 d-none d-md-inline">
+                <li class="nav-item ms-2 d-none d-md-inline" *ngIf="user$ | async as user">
                     <button class="btn btn-danger" (click)="logout()">logout</button>
                 </li>
             </ul>

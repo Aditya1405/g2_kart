@@ -8,6 +8,7 @@ import { map } from 'rxjs';
 export class MartApiService implements OnInit {
   newQty: number = 0;
   emitNum = new EventEmitter<number>();
+
   constructor(private http: HttpClient) { }
   ngOnInit(): void {
     console.log("mart Api ngoninit");

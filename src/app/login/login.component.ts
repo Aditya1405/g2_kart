@@ -4,6 +4,9 @@ import { FormGroup, FormBuilder, NonNullableFormBuilder } from '@angular/forms'
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
 import { AuthService } from '../services/authentication.service';
+import { UserDataService } from '../shared/user-data.service';
+import { KartDashboardComponent } from '../kart-dashboard/kart-dashboard.component';
+import { KartDashNavComponent } from '../kart-dash-nav/kart-dash-nav.component';
 
 @Component({
   selector: 'app-login',
@@ -11,9 +14,15 @@ import { AuthService } from '../services/authentication.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  //KDN: KartDashNavComponent = new KartDashNavComponent();
 
   public loginForm!: FormGroup;
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router, private authService: AuthService, private toast: HotToastService, private fb: NonNullableFormBuilder) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private authService: AuthService,
+    private toast: HotToastService,
+    private usrData: UserDataService) { }
   // loginForm = this.fb.group({
   //   email: ['', [Validators.required, Validators.email]],
   //   password: ['', Validators.required],
@@ -23,27 +32,9 @@ export class LoginComponent implements OnInit {
       email: [''],
       password: [''],
     })
+
   }
   login() {
-    // this.http.get<any>("http://localhost:3000/signupUsers").subscribe({
-    //   next: (v) => {
-    //     const user = v.find((a: any) => {
-    //       return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
-    //     });
-    //     if (user) {
-    //       alert("login Successfull");
-    //       this.loginForm.reset();
-    //       this.router.navigate(['dashboard']);
-    //     } else {
-    //       alert("User not found !!");
-    //     }
-    //   },
-    //   error: (e) => {
-    //     alert("Something went wrong")
-
-    //   },
-    //   complete: () => console.info('complete')
-    // })
     const { email, password } = this.loginForm.value;
 
     if (!this.loginForm.valid || !email || !password) {
@@ -62,6 +53,8 @@ export class LoginComponent implements OnInit {
       .subscribe(() => {
         this.router.navigate(['/dashboard']);
       });
+    // this.usrData.totalCost();
+    //this.Ka.ngOnInit();
   }
 
 }

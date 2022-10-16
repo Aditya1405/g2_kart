@@ -23,8 +23,10 @@ export class UserDataService {
   martArray: MartModel[] = [];
 
   totalAmount: number = 0;
-
   emitTA = new EventEmitter<number>();
+
+  cartCount: number = 0;
+  emitCC = new EventEmitter<number>();
 
   constructor(
     // private martApi: MartApiService,
@@ -62,16 +64,20 @@ export class UserDataService {
 
   totalCost() {
     let tc: number = 0;
+    let cc: number = 0;
     this.martArray = this.userDataModel.cart;
     for (let i = 0; i < this.martArray.length; i++) {
       let amt = this.martArray[i].price;
       let qty = this.martArray[i].qty;
+      cc += qty;
       let cost = qty * amt;
       tc += cost;
     }
     this.totalAmount = tc;
+    this.cartCount = cc;
     console.log("tc" + tc);
     this.emitTA.emit(this.totalAmount);
+    this.emitCC.emit(this.cartCount);
     //return tc;
   }
 }
