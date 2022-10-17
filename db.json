@@ -29,23 +29,9 @@
       "address": "bengaluru, karanatakas",
       "cart": [
         {
-          "id": 2,
-          "name": "i-14",
-          "qty": 2,
-          "price": 399,
-          "imageSrc": "assets/iphone_14_render.webp"
-        },
-        {
-          "id": 3,
-          "name": "G.O.A.T",
-          "qty": 5,
-          "price": 1299,
-          "imageSrc": "assets/shopping.webp"
-        },
-        {
           "id": 1,
           "name": "moto-razr",
-          "qty": 3,
+          "qty": 1,
           "price": 199,
           "imageSrc": "assets/moto-razr.webp"
         }
@@ -56,7 +42,7 @@
       "name": "sai",
       "email": "sai@gmail.com",
       "contact": 1234567890,
-      "address": "bengaluru, karanatakas",
+      "address": "bengaluru, karanataka",
       "cart": [
         {
           "id": 3,
@@ -64,6 +50,13 @@
           "qty": 1,
           "price": 1299,
           "imageSrc": "assets/shopping.webp"
+        },
+        {
+          "id": 2,
+          "name": "i-14",
+          "qty": 1,
+          "price": 399,
+          "imageSrc": "assets/iphone_14_render.webp"
         }
       ]
     },
@@ -88,14 +81,14 @@
     {
       "id": 1,
       "name": "moto-razr",
-      "qty": 7,
+      "qty": 6,
       "price": 199,
       "imageSrc": "assets/moto-razr.webp"
     },
     {
       "id": 2,
       "name": "i-14",
-      "qty": 7,
+      "qty": 6,
       "price": 399,
       "imageSrc": "assets/iphone_14_render.webp"
     },
