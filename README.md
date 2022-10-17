@@ -2,6 +2,41 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.4.
 
+A basic E-commerce Platform
+<ul>
+<li>Authentication using Firebase</li>
+<li>buy items and add them to your cart</li>
+<li>show total cart count</li>
+<li>show profile of user</li>
+<li>data of user cart is stored on json dummy server which also contains item and their quantity and prices as well</li>
+</ul>
+
+To start 
+<ul>
+<li>download the zip file and extract it</li>
+<li>open that folder from vs code</li>
+<li>launch terminal : 1</li>
+<ul><li>ng serve</li></ul>
+<li>launch terminal : 2</li>
+<ul><li>json-server --watch db.json</li></ul>
+</ul>
+## screenshots
+<span>
+<h3> Login Page</h3>
+<img src = "https://github.com/Aditya1405/g2_kart/blob/AuthFireBase/demo%20pictures/WhatsApp%20Image%202022-10-17%20at%2011.05.18.jpeg" width="900" height="500"  />
+<h3> Signup Page</h3>
+<img src = "https://github.com/Aditya1405/g2_kart/blob/AuthFireBase/demo%20pictures/WhatsApp%20Image%202022-10-17%20at%2011.05.34.jpeg" width="900" height="500"  />
+<h3> Dash Board</h3>
+<img src = "https://github.com/Aditya1405/g2_kart/blob/AuthFireBase/demo%20pictures/WhatsApp%20Image%202022-10-17%20at%2011.06.28.jpeg" width="900" height="500"  />
+<h3> Buy Section</h3>
+<img src = "https://github.com/Aditya1405/g2_kart/blob/AuthFireBase/demo%20pictures/WhatsApp%20Image%202022-10-17%20at%2011.07.51.jpeg" width="900" height="500"  />
+<h3> User Cart</h3>
+<img src = "https://github.com/Aditya1405/g2_kart/blob/AuthFireBase/demo%20pictures/WhatsApp%20Image%202022-10-17%20at%2011.08.10.jpeg" width="900" height="500"  />
+<h3> Profile Page</h3>
+<img src = "https://github.com/Aditya1405/g2_kart/blob/AuthFireBase/demo%20pictures/WhatsApp%20Image%202022-10-17%20at%2011.08.20.jpeg" width="900" height="500"  />
+
+</span>
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
