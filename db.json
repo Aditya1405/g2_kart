@@ -75,6 +75,29 @@
           "imageSrc": "assets/iphone_14_render.webp"
         }
       ]
+    },
+    {
+      "id": 8,
+      "name": "dhanush",
+      "email": "dhanush@gmail.com",
+      "contact": 7389470666,
+      "address": "india",
+      "cart": [
+        {
+          "id": 3,
+          "name": "G.O.A.T",
+          "qty": 1,
+          "price": 1299,
+          "imageSrc": "assets/shopping.webp"
+        },
+        {
+          "id": 2,
+          "name": "i-14",
+          "qty": 1,
+          "price": 399,
+          "imageSrc": "assets/iphone_14_render.webp"
+        }
+      ]
     }
   ],
   "items": [
@@ -88,14 +111,14 @@
     {
       "id": 2,
       "name": "i-14",
-      "qty": 6,
+      "qty": 5,
       "price": 399,
       "imageSrc": "assets/iphone_14_render.webp"
     },
     {
       "id": 3,
       "name": "G.O.A.T",
-      "qty": 4,
+      "qty": 3,
       "price": 1299,
       "imageSrc": "assets/shopping.webp"
     }
